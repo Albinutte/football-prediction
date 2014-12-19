@@ -1,7 +1,11 @@
-import urllib.request
-from bs4 import BeautifulSoup
 import re
+import urllib.request
+
+from bs4 import BeautifulSoup
 from selenium import webdriver
+
+
+__name__ = 'useful functions for 13-14'
 
 
 championat_statto = {'Астон Вилла': 'Aston Villa',

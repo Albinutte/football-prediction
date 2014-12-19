@@ -13,7 +13,7 @@
 
 
 import re
-from season_2012_2013 import useful_functions as uf
+import useful_functions as uf
 
 
 def get_values(soup):
@@ -91,5 +91,3 @@ def get_all_goal_pos_diff(path="./extracted_goal_score_diff.txt"):
                 handle.flush()
 
         print("Extraction completed")
-
-get_all_goal_pos_diff()

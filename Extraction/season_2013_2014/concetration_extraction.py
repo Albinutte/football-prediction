@@ -6,8 +6,8 @@
 # последний матч => х = 5, матч назад => х = 4 etc
 
 
+import useful_functions as uf
 import re
-from season_2013_2014 import useful_functions as uf
 
 
 def get_loses(team, soup):

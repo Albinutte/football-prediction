@@ -5,9 +5,9 @@
 #    1 за ничью
 #    0 за поражение
 
-import re
 
-from season_2012_2013 import useful_functions as uf
+import re
+import useful_functions as uf
 
 
 def get_form(url):
@@ -54,19 +54,17 @@ def get_form(url):
 
 def get_all_forms(path="./extracted_form_13_14.txt"):
     """Extracting all form to file"""
-    handle = open(path, "w")
-    soup = uf.get_soup()
-    cnt = 0
-    print("Starting extracting forms")
-    handle.write('name1\tname2\tform1\tform2\tresult\n')
-    for i in soup.findAll(attrs={'class': 'norm'}):
-        cnt += 1
-        print(cnt)
-        form = get_form('http://www.championat.com' + i['href'])
-        if form is not None:
-            handle.write('\t'.join(str(e) for e in form) + '\n')
-        if cnt % 5 == 0:
-            handle.flush()
-    print("Forms extraction finished")
-    handle.flush()
-    handle.close()
+    with open(path, "w") as handle:
+        soup = uf.get_soup()
+        cnt = 0
+        print("Starting extracting forms")
+        handle.write('name1\tname2\tform1\tform2\tresult\n')
+        for i in soup.findAll(attrs={'class': 'norm'}):
+            cnt += 1
+            print(cnt)
+            form = get_form('http://www.championat.com' + i['href'])
+            if form is not None:
+                handle.write('\t'.join(str(e) for e in form) + '\n')
+            if cnt % 5 == 0:
+                handle.flush()
+        print("Forms extraction finished")

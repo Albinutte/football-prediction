@@ -5,8 +5,8 @@
 #    2 - победа
 
 
+import useful_functions as uf
 import re
-from season_2013_2014 import useful_functions as uf
 
 
 def get_winner(logo, soup):

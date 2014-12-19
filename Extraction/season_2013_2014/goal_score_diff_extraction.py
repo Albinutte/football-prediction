@@ -12,8 +12,8 @@
 #         последнего
 
 
+import useful_functions as uf
 import re
-from season_2013_2014 import useful_functions as uf
 
 
 def get_values(soup):

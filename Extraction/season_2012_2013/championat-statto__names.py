@@ -1,4 +1,4 @@
-from season_2012_2013 import useful_functions as uf
+import useful_functions as uf
 
 
 champ = uf.get_soup("http://www.championat.com/football/_england/548/table/all.html")

@@ -3,7 +3,7 @@ import pandas as pd
 from matplotlib import pyplot as plt
 
 
-train = pd.read_table('full_extracted.txt', encoding='windows-1251')
+train = pd.read_table('../Extraction/full_extracted.txt', encoding='windows-1251')
 y_train = np.array(train['result'])
 x_train = train.drop(['result', 'name1', 'name2'], axis=1)
 
@@ -22,17 +22,17 @@ res = []
 for cnt, row in enumerate(train.values):
     dif = row[7]
     res.append(sum([x / matches_won for x, y in zip(train['result'], train['goal_diff']) if x == 1 and y < dif]))
-# plt.plot(train['goal_diff'], res, '.')
-# plt.xlabel('Goal diff')
-# plt.ylabel('Won games rate')
-# plt.show()
+plt.plot(train['goal_diff'], res, '.')
+plt.xlabel('Goal diff')
+plt.ylabel('Won games rate')
+plt.show()
 
 #: score_dif dependence
 res = []
 for cnt, row in enumerate(train.values):
     dif = row[8]
     res.append(sum([x / matches_won for x, y in zip(train['result'], train['score_diff']) if x == 1 and y < dif]))
-# plt.plot(train['score_diff'], res, '.')
-# plt.xlabel('Score diff')
-# plt.ylabel('Won games rate')
-# plt.show()
+plt.plot(train['score_diff'], res, '.')
+plt.xlabel('Score diff')
+plt.ylabel('Won games rate')
+plt.show()

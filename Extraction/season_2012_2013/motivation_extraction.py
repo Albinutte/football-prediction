@@ -7,9 +7,8 @@
 
 import re
 import time
+import useful_functions as uf
 import winsound
-
-from season_2012_2013 import useful_functions as uf
 
 
 TOURS = 39
@@ -118,4 +117,6 @@ def get_all_motivation(path="./extracted_motivation.txt"):
         print("Extraction completed")
         while True:
             winsound.Beep(800, 10000)
-        handle.flush()
+
+
+print(uf.__name__)
