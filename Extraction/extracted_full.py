@@ -9,3 +9,6 @@ with open('./season_2013_2014/extracted_13_14.txt', 'r') as data:
 
 full_extracted = pd.concat([extracted, extracted_13_14])
 full_extracted.to_csv('full_extracted.txt', sep='\t', index=False)
+
+
+# TODO: create ultra-class for easy extraction
