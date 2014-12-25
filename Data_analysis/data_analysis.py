@@ -15,6 +15,7 @@ plt.figure('Form hist')
 plt.hist(y_good, weights=y_all, color='green')
 plt.xlabel('Form difference')
 plt.ylabel('Win rate')
+plt.savefig('form_dependence.png')
 
 
 #: goal_dif dependence
@@ -26,7 +27,8 @@ for cnt, row in enumerate(train.values):
 plt.figure('Goal diff plot')
 plt.plot(train['goal_diff'], res, '.')
 plt.xlabel('Goal diff')
-plt.ylabel('Won games rate')
+plt.ylabel('Win rate')
+plt.savefig('goal_dif_dependence.png')
 
 
 #: score_dif dependence
@@ -37,6 +39,5 @@ for cnt, row in enumerate(train.values):
 plt.figure('Score diff plot')
 plt.plot(train['score_diff'], res, '.')
 plt.xlabel('Score diff')
-plt.ylabel('Won games rate')
-
-plt.show()
+plt.ylabel('Win rate')
+plt.savefig('score_dif_dependence.png')
